@@ -3,10 +3,10 @@ import * as types from './types'
 
 const getAllPosts = () => {
     return (dispatch) => { 
-      dispatch({ type: types. });
-      return axios.get('/api/auth/user').then(  
-        user => dispatch({ type: GET_CURRENT_USER_SUCCESS, user }),
-        err => dispatch({ type: GET_CURRENT_USER_FAILURE, err })
+      dispatch({ type: types.GET_ALL_POSTS });
+      return axios.get('/posts').then(  
+        posts => dispatch({ type: types.GET_ALL_POSTS_SUCCESS, posts }),
+        err => dispatch({ type: types.GET_ALL_POSTS_FAILURE, err })
       );
     };
   };
