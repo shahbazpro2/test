@@ -1,5 +1,32 @@
+import * as types from '../actions/types'
 const initialAllPostsState={
     posts:{},
-    success:false,
+    loading:false,
     error:null
 }
+
+const getAllPostsReducer=(state=initialAllPostsState,action)=>{
+    switch (action) {
+        case types.GET_ALL_POSTS:
+            return {
+                ...state,
+                loading:true
+            }
+        case types.GET_ALL_POSTS_SUCCESS:
+                return {
+                    ...state,
+                    loading:false,
+                    posts:action.payload
+                }
+        case types.GET_ALL_POSTS_FAILURE:
+                    return {
+                        ...state,
+                        loading:false,
+                        error:action.payload
+                    }
+        default:
+            break;
+    }
+}
+
+export default getAllPostsReducer
