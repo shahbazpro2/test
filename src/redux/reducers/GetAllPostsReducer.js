@@ -1,6 +1,6 @@
 import * as types from '../actions/types'
 const initialAllPostsState = {
-    posts: {},
+    posts: [],
     loading: false,
     error: null
 }
