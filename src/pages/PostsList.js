@@ -9,7 +9,8 @@ const PostsList = () => {
     const allPosts = useSelector(state => state.allPosts)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getAllPosts())
+        if (allPosts.posts.length === 0)
+            dispatch(getAllPosts())
     }, [])
 
     const removePostFun = (id) => {
