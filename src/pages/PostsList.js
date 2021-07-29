@@ -14,7 +14,7 @@ const PostsList = () => {
     const removePostFun=(id)=>{
         const confirm=window.confirm("Are you sure you want to delete?")
         if(confirm===true){
-            dispatch(removePost(id))
+            dispatch(removePost(id,allPosts.posts))
         }
     }
     return (
