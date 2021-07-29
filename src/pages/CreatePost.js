@@ -5,13 +5,20 @@ import createPost from '../redux/actions/CreatePost';
 import { useHistory } from 'react-router-dom';
 
 const CreatePost = () => {
+    const [isChangeUrl,setIsChangeUrl]=useState(false)
     const allPosts = useSelector(state => state.allPosts)
     const dispatch = useDispatch()
     let history = useHistory();
     const onSubmitFun = (values) => {
         dispatch(createPost(values, allPosts.posts))
-        //history.push('/')
+        setIsChangeUrl(true)
+        //
     }
+    useEffect(() => {
+        if(isChangeUrl===true && allPosts.loading===false){
+            history.push('/')
+        }
+    }, [allPosts.loading])
     console.log(allPosts)
     return (
         <div>
