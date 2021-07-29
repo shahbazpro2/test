@@ -7,8 +7,7 @@ const PostForm = ({ postData, onSubmitFun, title, loading }) => {
         validate()
     }, [])
     useEffect(() => {
-        if (loading === false)
-            setState({ title: postData?.title, body: postData?.body })
+        loading === false && setState({ title: postData?.title, body: postData?.body })
     }, [postData])
     const onChangeInput = (e) => {
         setState({ ...state, [e.target.name]: e.target.value })
