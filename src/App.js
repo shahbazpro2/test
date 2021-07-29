@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/" component={PostsList} />
           <Route exact path="/post/:id" component={SinglePost} />
           <Route exact path="/create" component={CreatePost} />
-          <Route exact path="/edit" component={EditPost} />
+          <Route exact path="/edit/:id" component={EditPost} />
         </Switch>
       </Router>
 
