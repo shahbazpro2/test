@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import PostForm from './../components/PostForm';
 import { useParams } from 'react-router-dom';
@@ -6,6 +6,7 @@ import getSinglePost from '../redux/actions/GetSinglePost';
 
 const EditPost = () => {
     const allPosts = useSelector(state => state.allPosts)
+    const singlePost = useSelector(state => state.singlePost)
     let { id } = useParams();
     const dispatch = useDispatch()
     useEffect(() => {
@@ -16,7 +17,7 @@ const EditPost = () => {
     }
     return (
         <div>
-            <PostForm onSubmitFun={onSubmitFun} title="Update post" loading={allPosts.loading} />
+            <PostForm onSubmitFun={onSubmitFun} title="Update post" postData={{ title: singlePost.post.title, body: singlePost.post.body }} loading={allPosts.loading} />
         </div>
     )
 }

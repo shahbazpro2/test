@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { validate } from './FormValidate';
 
-const PostForm = ({ postData, onSubmitFun, title,loading }) => {
-    const [state, setState] = useState({ title: postData?.title, body: postData?.body })
+const PostForm = ({ postData, onSubmitFun, title, loading }) => {
+    const [state, setState] = useState({ title: '', body: '' })
     useEffect(() => {
         validate()
     }, [])
+    useEffect(() => {
+        setState({ title: postData?.title, body: postData?.body })
+    }, [postData])
     const onChangeInput = (e) => {
         setState({ ...state, [e.target.name]: e.target.value })
     }
