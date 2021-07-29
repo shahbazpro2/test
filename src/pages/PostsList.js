@@ -4,7 +4,7 @@ import PostCard from '../components/PostCard'
 import getAllPosts from '../redux/actions/GetAllPosts';
 
 const PostsList = () => {
-    const state = useSelector(state => state.allPosts)
+    const allPosts = useSelector(state => state.allPosts)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getAllPosts())
@@ -12,7 +12,7 @@ const PostsList = () => {
     return (
         <div className="container">
             <div className="row">
-                {state.posts.map((post) => (
+                {allPosts.posts.map((post) => (
                     <div key={post.id} className="col-md-4 my-2">
                         <PostCard post={post} />
                     </div>
