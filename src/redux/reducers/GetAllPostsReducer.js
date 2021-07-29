@@ -16,7 +16,7 @@ const getAllPostsReducer = (state = initialAllPostsState, action) => {
             return {
                 ...state,
                 loading: false,
-                posts: action.payload
+                posts: action.posts
             }
         case types.GET_ALL_POSTS_FAILURE:
             return {
