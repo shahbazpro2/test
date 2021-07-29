@@ -1,29 +1,29 @@
 import * as types from '../actions/types'
-const initialAllPostsState={
-    posts:{},
-    loading:false,
-    error:null
+const initialAllPostsState = {
+    posts: {},
+    loading: false,
+    error: null
 }
 
-const getAllPostsReducer=(state=initialAllPostsState,action)=>{
-    switch (action) {
+const getAllPostsReducer = (state = initialAllPostsState, action) => {
+    switch (action.type) {
         case types.GET_ALL_POSTS:
             return {
                 ...state,
-                loading:true
+                loading: true
             }
         case types.GET_ALL_POSTS_SUCCESS:
-                return {
-                    ...state,
-                    loading:false,
-                    posts:action.payload
-                }
+            return {
+                ...state,
+                loading: false,
+                posts: action.payload
+            }
         case types.GET_ALL_POSTS_FAILURE:
-                    return {
-                        ...state,
-                        loading:false,
-                        error:action.payload
-                    }
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            }
         default:
             break;
     }
