@@ -14,13 +14,18 @@ const SinglePost = () => {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-10">
-                    <h1>{singlePost.post.title}</h1>
-                    <p className="mt-2">
-                        {singlePost.post.body}
-                    </p>
+                    {
+                        singlePost.loading === true ? <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div> : <>
+                            <h1>{singlePost.post.title}</h1>
+                            <p className="mt-2">
+                                {singlePost.post.body}
+                            </p>
+                        </>
+                    }
                 </div>
             </div>
-
         </div>
     )
 }
