@@ -1,6 +1,9 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const SinglePost = () => {
+    const singlePost=useSelector(state=>state.singlePost)
+    
     return (
         <div className="container">
             <div className="row justify-content-center">
