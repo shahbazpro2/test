@@ -25,7 +25,7 @@ const getAllPostsReducer = (state = initialAllPostsState, action) => {
                 error: action.payload
             }
         default:
-            break;
+            return state
     }
 }
 
