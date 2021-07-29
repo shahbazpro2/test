@@ -24,6 +24,8 @@ const getSinglePostReducer = (state = initialAllPostState, action) => {
                 loading: false,
                 error: action.err
             }
+        case types.REMOVE_SINGLE_POST:
+            return state
         default:
             return state
     }
