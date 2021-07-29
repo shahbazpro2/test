@@ -1,6 +1,6 @@
 import * as types from './types'
 
-const getSinglePost = (id, posts) => {
+const removePost = (id, posts) => {
     return (dispatch) => {
         dispatch({ type: types.REMOVE_POST });
         const filter = posts.filter(p => p.id !== id)
@@ -8,4 +8,4 @@ const getSinglePost = (id, posts) => {
     };
 };
 
-export default getSinglePost
+export default removePost
