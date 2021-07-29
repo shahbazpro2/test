@@ -22,7 +22,7 @@ const getAllPostsReducer = (state = initialAllPostsState, action) => {
             return {
                 ...state,
                 loading: false,
-                error: action.payload
+                error: action.err
             }
         default:
             return state
