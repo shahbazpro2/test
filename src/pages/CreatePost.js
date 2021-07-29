@@ -10,11 +10,12 @@ const CreatePost = () => {
     let history = useHistory();
     const onSubmitFun = (values) => {
         dispatch(createPost(values, allPosts.posts))
-        history.push('/')
+        //history.push('/')
     }
+    console.log(allPosts)
     return (
         <div>
-            <PostForm onSubmitFun={onSubmitFun} title="Create post" />
+            <PostForm onSubmitFun={onSubmitFun} title="Create post" loading={allPosts.loading} />
         </div>
     )
 }
