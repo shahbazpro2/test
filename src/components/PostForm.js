@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { validate } from './FormValidate';
 
-const PostForm = () => {
-    const [state, setState] = useState({ title: '', body: '' })
+const PostForm = ({ postData, onSubmitFun }) => {
+    const [state, setState] = useState({ title: postData?.title, body: postData?.body })
     useEffect(() => {
         validate()
     }, [])
@@ -11,7 +11,7 @@ const PostForm = () => {
     }
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
+        onSubmitFun(state)
     }
     return (
         <div className="container">
@@ -43,5 +43,7 @@ const PostForm = () => {
 
     )
 }
-
+PostForm.defaultProps = {
+    postData: { title: '', body: '' }
+}
 export default PostForm
