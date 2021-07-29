@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post,removePostFun }) => {
   return (
     <div className="card">
       <div className="card-body">
@@ -10,7 +10,7 @@ const PostCard = ({ post }) => {
         <div className="d-flex justify-content-evenly">
         <Link to={`/post/${post.id}`} className="btn btn-sm btn-primary">See more</Link>
         <Link to="/" className="btn btn-sm btn-success">Edit</Link>
-        <button className="btn btn-sm btn-danger">Remove</button>
+        <button className="btn btn-sm btn-danger" onClick={()=>removePostFun(post.id)}>Remove</button>
         </div>
         
       </div>
