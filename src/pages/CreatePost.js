@@ -19,7 +19,6 @@ const CreatePost = () => {
             history.push('/')
         }
     }, [allPosts.loading])
-    console.log(allPosts)
     return (
         <div>
             <PostForm onSubmitFun={onSubmitFun} title="Create post" loading={allPosts.loading} />
