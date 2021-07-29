@@ -26,7 +26,7 @@ const PostsList = () => {
                     <div key={post.id} className="col-md-4 my-2">
                         <PostCard post={post} removePostFun={removePostFun} />
                     </div>
-                ))}
+                )).reverse()}
             </div>
         </div>
     )
