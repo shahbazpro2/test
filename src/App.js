@@ -8,6 +8,7 @@ import SinglePost from './pages/SinglePost';
 import CreatePost from './pages/CreatePost';
 import getAllPosts from './redux/actions/GetAllPosts';
 import { useDispatch } from 'react-redux';
+import EditPost from './pages/EditPost';
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/" component={PostsList} />
           <Route exact path="/post/:id" component={SinglePost} />
           <Route exact path="/create" component={CreatePost} />
+          <Route exact path="/edit" component={EditPost} />
         </Switch>
       </Router>
 
