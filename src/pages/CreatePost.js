@@ -12,7 +12,6 @@ const CreatePost = () => {
     const onSubmitFun = (values) => {
         dispatch(createPost(values, allPosts.posts))
         setIsChangeUrl(true)
-        //
     }
     useEffect(() => {
         if(isChangeUrl===true && allPosts.loading===false){
