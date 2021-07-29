@@ -14,7 +14,7 @@ const PostsList = () => {
             <div className="row">
                 {state.posts.map((post) => (
                     <div key={post.id} className="col-md-4 my-2">
-                        <PostCard data={post} />
+                        <PostCard post={post} />
                     </div>
                 ))}
             </div>
