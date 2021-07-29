@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PostForm from './../components/PostForm';
 import { useParams } from 'react-router-dom';
 import getSinglePost from '../redux/actions/GetSinglePost';
+import editPost from './../redux/actions/EditPost';
 
 const EditPost = () => {
     const allPosts = useSelector(state => state.allPosts)
@@ -14,6 +15,7 @@ const EditPost = () => {
     }, [])
     const onSubmitFun = (values) => {
         console.log(values)
+        dispatch(editPost({...values,id:Number(id)},allPosts.posts))
     }
     return (
         <div>
