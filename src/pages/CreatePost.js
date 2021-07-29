@@ -7,7 +7,7 @@ const CreatePost = () => {
     }
     return (
         <div>
-            <PostForm onSubmitFun={onSubmitFun} title="create" />
+            <PostForm onSubmitFun={onSubmitFun} title="create post" />
         </div>
     )
 }
