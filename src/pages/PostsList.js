@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useSelector } from 'react-redux'
 import PostCard from '../components/PostCard'
 
 const PostsList = () => {
     const state = useSelector(state => state.allPosts)
+    const [posts,setPosts]=useState(state.posts)
     
-
     return (
         <div className="container">
             <div className="row">
