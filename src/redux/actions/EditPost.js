@@ -10,7 +10,6 @@ const editPost = (values, posts) => {
                 return { ...p, ...values }
             } else return p
         })
-        console.log(newPosts)
         setTimeout(() => {
             dispatch({ type: types.GET_ALL_POSTS_SUCCESS, posts: newPosts })
         }, 5000)
