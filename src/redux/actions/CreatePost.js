@@ -5,7 +5,10 @@ const createPost = (values, posts) => {
         dispatch({ type: types.GET_ALL_POSTS });
         let newPosts=posts
         newPosts.push({ id: posts.length + 1, ...values })
-        dispatch({ type: types.GET_ALL_POSTS_SUCCESS, posts: newPosts })
+        setTimeout(()=>{
+            dispatch({ type: types.GET_ALL_POSTS_SUCCESS, posts: newPosts })
+        },5000)
+        
     };
 };
 
