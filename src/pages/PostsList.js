@@ -20,7 +20,7 @@ const PostsList = () => {
     }
     return (
         <div className="container">
-            <Link to="/post/create" className="btn btn-primary mb-3">Create a new post</Link>
+            <Link to="/create" className="btn btn-primary mb-3">Create a new post</Link>
             <div className="row">
                 {allPosts.posts.map((post) => (
                     <div key={post.id} className="col-md-4 my-2">
