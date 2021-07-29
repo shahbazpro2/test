@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import PostCard from '../components/PostCard'
-import getAllPosts from '../redux/actions/GetAllPosts';
 import removePost from './../redux/actions/RemovePost';
 import { Link } from 'react-router-dom';
 
 const PostsList = () => {
     const allPosts = useSelector(state => state.allPosts)
     const dispatch = useDispatch()
-    useEffect(() => {
-        if (allPosts.posts.length === 0)
-            dispatch(getAllPosts())
-    }, [])
-
     const removePostFun = (id) => {
         const confirm = window.confirm("Are you sure you want to delete?")
         if (confirm === true) {
