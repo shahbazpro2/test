@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { validate } from './FormValidate';
 
-const PostForm = ({ postData, onSubmitFun, title }) => {
+const PostForm = ({ postData, onSubmitFun, title,loading }) => {
     const [state, setState] = useState({ title: postData?.title, body: postData?.body })
     useEffect(() => {
         validate()
@@ -34,7 +34,7 @@ const PostForm = ({ postData, onSubmitFun, title }) => {
                             </div>
                         </div>
                         <div className="py-2">
-                            <button className="btn btn-primary" type="submit">{title}</button>
+                            <button className="btn btn-primary" disabled={loading} type="submit">{title}</button>
                         </div>
                     </form>
                 </div>
