@@ -26,7 +26,7 @@ const EditPost = () => {
     }, [allPosts.loading])
     return (
         <div>
-            <PostForm onSubmitFun={onSubmitFun} title="Update post" postData={singlePost.post} allPostLoading={allPosts.loading} singlePostLoading={singlePost.loading} />
+            <PostForm onSubmitFun={onSubmitFun} title="Update post" postData={singlePost.post} loading={allPosts.loading} />
         </div>
     )
 }
